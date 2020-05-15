@@ -1,0 +1,47 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+
+{% block body %}
+
+
+
+<div class="">
+    
+    <img src="{% static 'home/images/18.png' %}" alt="Profile pic" class="img-thumbnail" width="1500px" height="500px">
+</div>
+
+<h1 class="mt-2 text-white text-center"> CONTACT US </h1>
+<div class="container text-white ">
+    
+<form action="/contact" method="post">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone No</label>
+        <input type="tel" class="form-control" id="phone" name="phone"placeholder="Enter Phone Number">
+      </div>
+      
+
+      <div class="form-group">
+        <label for="content">Your Message</label>
+        <textarea type="text" class="form-control" id="content" name="content" rows="2" placeholder="Enter Your Text"></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary ">Submit</button>
+  </form>
+</div>
+
+
+
+{% endblock body %}

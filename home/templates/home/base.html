@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'home/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    {% block corecss %}
+     <link rel="stylesheet" href="{% static 'home/css/core.css' %}">
+    {% endblock corecss %}
+</head>
+<body>
+
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+      <strong>Message:</strong> {{ message}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-sm-2">
+             {% include 'home/sidebar.html' %}
+            </div>
+      
+        
+
+
+
+
+
+           
+         
+            <div class="col-sm-10 ">
+
+              {% block body %} {% endblock body %}
+            </div>
+        </div>
+    </div>
+    
+
+
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+  (function () {
+      var options = {
+          facebook: "112885700424232", // Facebook page ID
+          whatsapp: "919627603702", // WhatsApp number
+          call_to_action: "Message Immediately", // Call to action
+          button_color: "#E74339", // Color of button
+          position: "right", // Position may be 'right' or 'left'
+          order: "facebook,whatsapp", // Order of buttons
+      };
+      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+  })();
+</script>
+<!-- /GetButton.io widget -->
+
+
+
+
+
+
+
+    
+
+    <!-- FOOTER -->
+    <div class="p-3 mb-2 bg-success text-dark mt-0"><footer class="container mt-3 " >
+        <p class="float-right"><a href="#"><b class="text-dark">Back to top</b></a></p>
+        <p>&copy; <b class="text-dark">2019-2020 AshuKashyapData.com</b> &middot; <a href="#"><b class="text-dark">Privacy</b></a> &middot; <a href="#"><b class="text-dark">Terms</b></a></p>
+      </footer>
+
+</div> 
+
+
+
+
+     
+    <script src="{% static 'home/js/jquary.js' %}"></script>
+    <script src="{% static 'home/js/popper.js' %}"></script>
+    <script src="{% static 'home/js/all.min.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <ul class="social-icons ">
+  <li> <a href="http://www.facebook.com"><img src="{% static 'home/images/2p.png' %}" class="img-fluid  rounded-circle mt-5" width="40px" height="50px" /></a></li>
+ <li> <a href="http://www.twitter.com"><img src="{% static 'home/images/3p.png' %}" class="img-fluid  rounded-circle mt-3" width="40px" height="50px"/></a></li>
+  <li><a href="http://www.youtube.com"><img src="{% static 'home/images/5p.png' %}" class="img-fluid  rounded-circle mt-3 ml-15" width="40px" height="500px"/></a></li>
+</ul>
+</div> -->
